@@ -1,5 +1,5 @@
 console.log("hi");
-var turn = 0;
+var turn = 1;
 all_btns = [...document.querySelectorAll("button")];
 function btn_click_mngr(e) {
   visualise();
