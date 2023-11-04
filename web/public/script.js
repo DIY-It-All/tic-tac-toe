@@ -2,7 +2,6 @@ console.log("hi");
 var turn = 1;
 all_btns = [...document.querySelectorAll("button")];
 function btn_click_mngr(e) {
-  visualise();
   console.log(e.srcElement);
   e.srcElement.innerText = "O";
   turn = 1 - turn;
@@ -19,10 +18,9 @@ function visualise() {
 }
 
 function cmp_move() {
-  visualise();
   found = false;
+  let no = 0
   while (!found) {
-    let no = (Math.random() * 9 - 1) | 1;
     let point = all_btns[no];
     console.log(`btn: ${no}, has value: ${point.innerText} `);
     if (point.innerText == "") {
@@ -30,8 +28,8 @@ function cmp_move() {
       turn = 1 - turn;
       found = true;
     }
+    no++;
   }
-  visualise();
 }
 
 function ctrls() {
